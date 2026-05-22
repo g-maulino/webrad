@@ -170,7 +170,7 @@ The script **does not create duplicates**: a file that has already been imported
 
 ---
 
-## 4. Web Interface (PHP)
+## Web Interface (PHP)
 
 ### Database Configuration
 
@@ -206,7 +206,7 @@ sudo chown -R www-data:www-data /var/www/html/webradio/adm
 
 ---
 
-## 5. Schedule Page Features
+## Schedule Page Features
 
 - **Date navigation**: Previous / Today / Next buttons plus a date picker
 - **Automatic air-time calculation** starting from 00:00
@@ -216,7 +216,7 @@ sudo chown -R www-data:www-data /var/www/html/webradio/adm
 
 ---
 
-## 6. Security
+## Security
 
 > ⚠️ These pages do not include an authentication system.
 > In production, protect them with one of the following:
