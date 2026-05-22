@@ -417,11 +417,18 @@ class Playlist:
 def _extract_tags(filepath: Path) -> Tuple[str, str]:
     """
     Retourne (title, artist).
-    Utilise mutagen si disponible, sinon le nom de fichier sans extension.
+    Utilise mutagen si disponible, sinon extrait l'artiste et le titre depuis le nom avec __ en séparateur
+    Sinon le nom de fichier sans extension.
     Appelé uniquement en mode aléatoire (en mode DB, les tags viennent de la DB).
     """
-    title  = filepath.stem
-    artist = ''
+    filename = str(filepath.name)
+    if "__" in filename:
+        name_without_ext = filename.rsplit(".", 1)[0]
+        artist, title = name_without_ext.split("__", 1)
+    else:
+        title  = filepath.stem
+        artist = ''
+        
     try:
         from mutagen import File as MutagenFile
         tags = MutagenFile(filepath, easy=True)
