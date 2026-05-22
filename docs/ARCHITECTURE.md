@@ -113,7 +113,7 @@ titre         (id_titre, nom_titre, chemin, id_artiste, id_genre, duree)
 programmation (id_prog, date_prog, ordre, id_titre)
 ```
 
-The `programmation` table associates a date with an ordered list of tracks (`ordre`). An external script (not included in this repository) is responsible for populating these tables from an audio file folder.
+The `programmation` table associates a date with an ordered list of tracks (`ordre`). The [import_music](https://github.com/g-maulino/webrad/blob/main/db/02_import_music.py) script is responsible for populating the titre and artistes tables from scanning audio file folder.
 
 ---
 
